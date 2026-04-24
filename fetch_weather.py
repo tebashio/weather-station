@@ -1,33 +1,43 @@
 import requests
 import json
-import os
+import time
 
 # 1. 観測地点リストを読み込む
-with open('locations.json', 'r') as f:
+with open('locations.json', 'r', encoding='utf-8') as f:
     locations = json.load(f)
 
-# 2. Open-MeteoのURLを組み立てる
-lats = ",".join([str(l['lat']) for l in locations])
-lons = ",".join([str(l['lon']) for l in locations])
+def chunk_list(l, n):
+    for i in range(0, len(l), n):
+        yield l[i:i + n]
 
-url = f"https://api.open-meteo.com/v1/forecast?latitude={lats}&longitude={lons}&hourly=surface_pressure&past_days=3&forecast_days=11&timezone=Asia%2FTokyo"
-
-# 3. データを取得する
-response = requests.get(url)
-data = response.json()
-
-# 4. データを整理して保存する
 results = {}
-# Open-Meteoの一括リクエストは、配列でデータが返ってくるので順番に紐付けます
-for i, loc in enumerate(locations):
-    city_data = data[i] if isinstance(data, list) else data
+# 2. 50地点ずつに分けて取得（チャンク処理）
+for chunk in chunk_list(locations, 50):
+    lats = ",".join([str(l['lat']) for l in chunk])
+    lons = ",".join([str(l['lon']) for l in chunk])
     
-    # 複数地点の場合はdata自体がリストではなく、各項目がリストになる
-    hourly = data['hourly'] if len(locations) == 1 else data[i]['hourly']
+    url = f"https://api.open-meteo.com/v1/forecast?latitude={lats}&longitude={lons}&hourly=surface_pressure&past_days=3&forecast_days=11&timezone=Asia%2FTokyo"
     
-    results[loc['id']] = []
-    for t, p in zip(hourly['time'], hourly['surface_pressure']):
-        results[loc['id']].append({"time": t, "pressure": p})
+    response = requests.get(url)
+    data = response.json()
+    
+    # 3. 取得したデータを一つのresults辞書にマージする
+    # 地点が1つの場合と複数の場合でレスポンス形式が違うので対応
+    for i, loc in enumerate(chunk):
+        hourly_data = data[i]['hourly'] if isinstance(data, list) else data['hourly']
+        # 地点数が多い場合はdata自体がリスト、少ない(1地点)なら辞書になるOpen-Meteoの仕様対策
+        if len(chunk) > 1:
+            hourly_data = data[i]['hourly']
+        else:
+            hourly_data = data['hourly']
 
-with open('weather_data.json', 'w') as f:
-    json.dump(results, f)
+        results[loc['id']] = []
+        for t, p in zip(hourly_data['time'], hourly_data['surface_pressure']):
+            results[loc['id']].append({"time": t, "pressure": p})
+    
+    # APIへの負荷軽減のため、少しだけ休憩（マナー）
+    time.sleep(1)
+
+# 4. 全地点分がまとまった一つのファイルとして保存
+with open('weather_data.json', 'w', encoding='utf-8') as f:
+    json.dump(results, f, ensure_ascii=False)
