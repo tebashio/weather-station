@@ -1,17 +1,22 @@
 [
   {
-    "pref_names": {"ja":"東京都","en":"Tokyo","zh":" scraps京","ko":"도쿄도"},
-    "city_names": {"ja":"渋谷区","en":"Shibuya","zh":"涩谷区","ko":"시부야구"},
-    "lat": 35.66, "lon": 139.70
+    "lat": 35.66, "lon": 139.70,
+    "pref": {"ja": "東京都", "en": "Tokyo", "zh": "东京都", "ko": "도쿄도"},
+    "name": {"ja": "渋谷区", "en": "Shibuya", "zh": "涩谷区", "ko": "시부야구"}
   },
   {
-    "pref_names": {"ja":"大阪府","en":"Osaka","zh":"大阪府","ko":"오사카부"},
-    "city_names": {"ja":"北区","en":"Kita Ward","zh":"北区","ko":"기타구"},
-    "lat": 34.70, "lon": 135.50
+    "lat": 34.70, "lon": 135.50,
+    "pref": {"ja": "大阪府", "en": "Osaka", "zh": "大阪府", "ko": "오사카부"},
+    "name": {"ja": "北区", "en": "Kita Ward", "zh": "北区", "ko": "기타구"}
   },
   {
-    "pref_names": {"ja":"北海道","en":"Hokkaido","zh":"北海道","ko":"홋카이도"},
-    "city_names": {"ja":"札幌市","en":"Sapporo","zh":"札晃市","ko":"삿포로시"},
-    "lat": 43.06, "lon": 141.35
+    "lat": 43.06, "lon": 141.35,
+    "pref": {"ja": "北海道", "en": "Hokkaido", "zh": "北海道", "ko": "홋카이도"},
+    "name": {"ja": "札幌市", "en": "Sapporo", "zh": "札幌市", "ko": "삿포로시"}
+  },
+  {
+    "lat": 33.59, "lon": 130.40,
+    "pref": {"ja": "福岡県", "en": "Fukuoka", "zh": "福冈县", "ko": "후쿠오카현"},
+    "name": {"ja": "福岡市", "en": "Fukuoka City", "zh": "福冈市", "ko": "후쿠오카시"}
   }
 ]
