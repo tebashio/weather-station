@@ -1,6 +1,17 @@
 [
-  {"pref_ja": "東京都", "pref_en": "Tokyo", "name_ja": "渋谷区", "name_en": "Shibuya City", "lat": 35.66, "lon": 139.70},
-  {"pref_ja": "東京都", "pref_en": "Tokyo", "name_ja": "江戸川区", "name_en": "Edogawa City", "lat": 35.70, "lon": 139.87},
-  {"pref_ja": "神奈川県", "pref_en": "Kanagawa", "name_ja": "横浜市", "name_en": "Yokohama", "lat": 35.44, "lon": 139.63},
-  {"pref_ja": "大阪府", "pref_en": "Osaka", "name_ja": "北区", "name_en": "Kita Ward", "lat": 34.70, "lon": 135.50}
+  {
+    "pref_names": {"ja":"東京都","en":"Tokyo","zh":" scraps京","ko":"도쿄도"},
+    "city_names": {"ja":"渋谷区","en":"Shibuya","zh":"涩谷区","ko":"시부야구"},
+    "lat": 35.66, "lon": 139.70
+  },
+  {
+    "pref_names": {"ja":"大阪府","en":"Osaka","zh":"大阪府","ko":"오사카부"},
+    "city_names": {"ja":"北区","en":"Kita Ward","zh":"北区","ko":"기타구"},
+    "lat": 34.70, "lon": 135.50
+  },
+  {
+    "pref_names": {"ja":"北海道","en":"Hokkaido","zh":"北海道","ko":"홋카이도"},
+    "city_names": {"ja":"札幌市","en":"Sapporo","zh":"札晃市","ko":"삿포로시"},
+    "lat": 43.06, "lon": 141.35
+  }
 ]
