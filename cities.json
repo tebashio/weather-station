@@ -1,16 +1,6 @@
 [
-  {
-    "pref_jp": "東京都", "pref_en": "Tokyo",
-    "name_jp": "渋谷区", "name_en": "Shibuya City",
-    "lat": 35.6640, "lon": 139.6982
-  },
-  {
-    "pref_jp": "東京都", "pref_en": "江戸川区", "name_en": "Edogawa City",
-    "lat": 35.7062, "lon": 139.8659
-  },
-  {
-    "pref_jp": "神奈川県", "pref_en": "Kanagawa",
-    "name_jp": "横浜市", "name_en": "Yokohama",
-    "lat": 35.4437, "lon": 139.6380
-  }
+  {"pref_ja": "東京都", "pref_en": "Tokyo", "name_ja": "渋谷区", "name_en": "Shibuya City", "lat": 35.66, "lon": 139.70},
+  {"pref_ja": "東京都", "pref_en": "Tokyo", "name_ja": "江戸川区", "name_en": "Edogawa City", "lat": 35.70, "lon": 139.87},
+  {"pref_ja": "神奈川県", "pref_en": "Kanagawa", "name_ja": "横浜市", "name_en": "Yokohama", "lat": 35.44, "lon": 139.63},
+  {"pref_ja": "大阪府", "pref_en": "Osaka", "name_ja": "北区", "name_en": "Kita Ward", "lat": 34.70, "lon": 135.50}
 ]
