@@ -1,5 +1,12 @@
 [
-  {"id": "tokyo_center", "name": "Tokyo", "lat": 35.6895, "lon": 139.6917},
-  {"id": "sapporo_center", "name": "Sapporo", "lat": 43.0642, "lon": 141.3469},
-  {"id": "osaka_center", "name": "Osaka", "lat": 34.6937, "lon": 135.5023}
+  {"id": "hokkaido_ishikari", "lat": 43.06, "lon": 141.34},
+  {"id": "aomori_tsugaru", "lat": 40.82, "lon": 140.74},
+  {"id": "miyagi_east", "lat": 38.26, "lon": 140.87},
+  {"id": "tokyo_main", "lat": 35.68, "lon": 139.76},
+  {"id": "kanagawa_east", "lat": 35.44, "lon": 139.64},
+  {"id": "aichi_owari", "lat": 35.18, "lon": 136.90},
+  {"id": "osaka_main", "lat": 34.68, "lon": 135.50},
+  {"id": "hiroshima_south", "lat": 34.39, "lon": 132.45},
+  {"id": "fukuoka_fukuoka", "lat": 33.59, "lon": 130.40},
+  {"id": "okinawa_main", "lat": 26.21, "lon": 127.68}
 ]
